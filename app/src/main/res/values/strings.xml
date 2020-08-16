@@ -4,4 +4,6 @@
     <string name="text_hit_message">Come on, hit it!</string>
     <string name="text_nice_hit">Nice hit!</string>
     <string name="button_hit_again">Get a new piñata</string>
+    <string name="text_song">Dale, Dale, Dale, No pierdas el tino...</string>
+    <string name="text_note">[Mexican Piñata song]</string>
 </resources>

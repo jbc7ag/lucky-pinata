@@ -15,8 +15,8 @@
 
             <ImageView
                 android:id="@+id/img_pinata"
-                android:layout_width="221dp"
-                android:layout_height="207dp"
+                android:layout_width="@dimen/image_size"
+                android:layout_height="@dimen/image_size"
                 android:layout_marginTop="60dp"
                 android:cropToPadding="false"
                 android:rotation="180"
@@ -33,53 +33,48 @@
                 android:layout_marginTop="18dp"
                 android:fontFamily="@font/droid_sans"
                 android:text="@string/text_nice_hit"
+                android:textColor="@color/primary_text"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/text_advice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/droid_sans"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:singleLine="false"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/img_pinata"
-                    tools:text="This is a new Advice take care,This is a new Advice take care " />
+            <TextView
+                android:id="@+id/text_advice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/droid_sans"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="@color/secondary_text"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_pinata"
+                tools:text="This is a new Advice take care,This is a new Advice take care " />
 
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/droid_sans"
-                    android:text="@string/button_hit_again"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <ImageView
-                    android:id="@+id/icon_mad"
-                    android:layout_width="39dp"
-                    android:layout_height="37dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_pinata"
-                    app:layout_constraintEnd_toEndOf="@+id/img_pinata"
-                    app:layout_constraintHorizontal_bias="0.354"
-                    app:layout_constraintStart_toStartOf="@+id/img_pinata"
-                    app:layout_constraintTop_toTopOf="@+id/img_pinata"
-                    app:layout_constraintVertical_bias="0.765"
-                    app:srcCompat="@drawable/ic_baseline_fullscreen_exit_24" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/holo_blue_dark"
+                android:fontFamily="@font/droid_sans"
+                android:text="@string/button_hit_again"
+                android:textColor="#FAFAFA"
+                android:textColorHighlight="@color/accent"
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

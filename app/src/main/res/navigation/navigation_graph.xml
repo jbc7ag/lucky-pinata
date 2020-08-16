@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/hitPinataFragment">
+    <fragment
+        android:id="@+id/hitPinataFragment"
+        android:name="com.jbc7ag.luckypinata.hitPinataFragment"
+        android:label="hitPinataFragment"
+        tools:layout="@layout/fragment_hit_pinata"
+        >
+        <action
+            android:id="@+id/action_hitPinataFragment_to_myAdviceFragment"
+            app:destination="@id/myAdviceFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAdviceFragment"
+        android:name="com.jbc7ag.luckypinata.myAdviceFragment"
+        android:label="myAdviceFragment"
+        tools:layout="@layout/fragment_my_advice"
+        >
+        <action
+            android:id="@+id/action_myAdviceFragment_to_hitPinataFragment"
+            app:destination="@id/hitPinataFragment"
+            app:enterAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+</navigation>

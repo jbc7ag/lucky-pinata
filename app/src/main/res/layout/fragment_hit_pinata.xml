@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -24,8 +25,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_nice_hit"
-                app:layout_constraintVertical_bias="0.3"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/pinata" />
 
             <TextView
@@ -35,11 +35,54 @@
                 android:layout_marginTop="18dp"
                 android:fontFamily="@font/droid_sans"
                 android:text="@string/text_hit_message"
+                android:textColor="@color/primary_text"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_txt"
+                android:layout_marginRight="@dimen/margin_txt"
+                android:text="@string/text_song"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_pinata"
+                app:layout_constraintVertical_bias="0.408" />
+
+            <TextView
+                android:id="@+id/txt_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_txt"
+                android:layout_marginBottom="@dimen/margin_txt"
+                android:text="@string/text_note"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/img_pinata" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="#FFFFFF"
+                android:tint="?attr/actionModeSplitBackground"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/textView3"
+                app:srcCompat="@drawable/ic_baseline_music_note_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
