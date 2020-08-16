@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lucky Piñata</string>
+    <string name="text_lucky">Lucky Piñata</string>
+    <string name="text_hit_message">Come on, hit it!</string>
+    <string name="text_nice_hit">Nice hit!</string>
+    <string name="button_hit_again">Get a new piñata</string>
+</resources>
