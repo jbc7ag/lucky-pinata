@@ -2,6 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="hit"
+            type="com.jbc7ag.luckypinata.HitPinataFragment" />
+    </data>
+
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"

@@ -6,7 +6,7 @@
     app:startDestination="@id/hitPinataFragment">
     <fragment
         android:id="@+id/hitPinataFragment"
-        android:name="com.jbc7ag.luckypinata.hitPinataFragment"
+        android:name="com.jbc7ag.luckypinata.HitPinataFragment"
         android:label="hitPinataFragment"
         tools:layout="@layout/fragment_hit_pinata"
         >
@@ -14,16 +14,21 @@
             android:id="@+id/action_hitPinataFragment_to_myAdviceFragment"
             app:destination="@id/myAdviceFragment"
             app:enterAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="numHits"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/myAdviceFragment"
-        android:name="com.jbc7ag.luckypinata.myAdviceFragment"
+        android:name="com.jbc7ag.luckypinata.MyAdviceFragment"
         android:label="myAdviceFragment"
         tools:layout="@layout/fragment_my_advice"
         >
         <action
             android:id="@+id/action_myAdviceFragment_to_hitPinataFragment"
             app:destination="@id/hitPinataFragment"
-            app:enterAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/hitPinataFragment" />
     </fragment>
 </navigation>
