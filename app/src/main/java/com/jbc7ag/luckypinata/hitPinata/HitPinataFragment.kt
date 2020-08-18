@@ -1,7 +1,6 @@
-package com.jbc7ag.luckypinata
+package com.jbc7ag.luckypinata.hitPinata
 
 import android.R
-import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,21 +9,15 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.DialogFragmentNavigatorDestinationBuilder
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.jbc7ag.luckypinata.databinding.FragmentHitPinataBinding
-import kotlin.random.Random
 
-private var randomNumber: Int = 0
-private var countClick: Int = 0;
+
 
 class HitPinataFragment : Fragment() {
 
-
-    init {
-
-        randomNumber = Random.nextInt(5, 10)
-    }
+    private lateinit var viewModel: HitPinataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +26,9 @@ class HitPinataFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentHitPinataBinding.inflate(inflater)
 
+        viewModel = ViewModelProvider(this).get(HitPinataViewModel::class.java)
+        binding.hitPinataViewModel = viewModel
+
         binding.setLifecycleOwner(this)
 
         val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
@@ -40,12 +36,12 @@ class HitPinataFragment : Fragment() {
         binding.imgPinata.setOnClickListener(View.OnClickListener {
             it.startAnimation(animation)
 
-            Toast.makeText(context,"${randomNumber} - ${countClick}", Toast.LENGTH_LONG).show()
+           // Toast.makeText(context,"${viewModel.randomNumber.value} - ${viewModel.countClick.value}", Toast.LENGTH_LONG).show()
 
-            if( countClick == randomNumber){
+            if(viewModel.finishHits()){
                 this.findNavController().navigate(HitPinataFragmentDirections.actionHitPinataFragmentToMyAdviceFragment())
             }
-            countClick++
+            viewModel.addClick()
         })
 
         return binding.root

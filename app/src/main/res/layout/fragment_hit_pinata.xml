@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="hit"
-            type="com.jbc7ag.luckypinata.HitPinataFragment" />
+            name="hitPinataViewModel"
+            type="com.jbc7ag.luckypinata.hitPinata.HitPinataViewModel" />
     </data>
 
     <ScrollView

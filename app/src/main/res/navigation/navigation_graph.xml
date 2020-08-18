@@ -6,7 +6,7 @@
     app:startDestination="@id/hitPinataFragment">
     <fragment
         android:id="@+id/hitPinataFragment"
-        android:name="com.jbc7ag.luckypinata.HitPinataFragment"
+        android:name="com.jbc7ag.luckypinata.hitPinata.HitPinataFragment"
         android:label="hitPinataFragment"
         tools:layout="@layout/fragment_hit_pinata"
         >
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/myAdviceFragment"
-        android:name="com.jbc7ag.luckypinata.MyAdviceFragment"
+        android:name="com.jbc7ag.luckypinata.myadvice.MyAdviceFragment"
         android:label="myAdviceFragment"
         tools:layout="@layout/fragment_my_advice"
         >
