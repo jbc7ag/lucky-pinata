@@ -5,6 +5,9 @@ It's the mexican version of a fortune cookie. In this app you have to hit the pi
 
 ## Screenshots
 
+![Screenshot1](screenshots/hit_pinata.png)
+![Screenshot3](screenshots/my_advice.png)
+
 ## Credits
 [Advice API](https://api.adviceslip.com/)
 
