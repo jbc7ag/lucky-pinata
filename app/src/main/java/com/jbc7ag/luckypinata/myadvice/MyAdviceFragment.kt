@@ -6,14 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.jbc7ag.luckypinata.R
+import androidx.lifecycle.ViewModelProvider
+import com.jbc7ag.luckypinata.databinding.FragmentMyAdviceBinding
+import timber.log.Timber
 
 class MyAdviceFragment: Fragment(){
+
+    private lateinit var viewModel: MyAdviceViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        return inflater.inflate(R.layout.fragment_my_advice, container, false)
+
+        val binding = FragmentMyAdviceBinding.inflate(inflater)
+
+        viewModel = ViewModelProvider(this).get(MyAdviceViewModel::class.java)
+        binding.myAdviceViewModel = viewModel
+
+
+        binding.setLifecycleOwner(this)
+
+        return binding.root
     }
 
 }

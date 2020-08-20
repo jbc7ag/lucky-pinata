@@ -1,6 +1,7 @@
 package com.jbc7ag.luckypinata.hitPinata
 
 import android.R
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,11 +32,14 @@ class HitPinataFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
-        val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+        //val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
 
         binding.imgPinata.setOnClickListener(View.OnClickListener {
-            it.startAnimation(animation)
+         //   it.startAnimation(animation)
 
+            AnimationUtils.loadAnimation(context, R.anim.fade_in).also { hyperspaceJumpAnimation ->
+                binding.imgPinata.startAnimation(hyperspaceJumpAnimation)
+            }
            // Toast.makeText(context,"${viewModel.randomNumber.value} - ${viewModel.countClick.value}", Toast.LENGTH_LONG).show()
 
             if(viewModel.finishHits()){

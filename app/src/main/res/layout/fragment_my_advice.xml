@@ -2,6 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="myAdviceViewModel"
+            type="com.jbc7ag.luckypinata.myadvice.MyAdviceViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,14 +58,17 @@
                 android:textColor="@color/secondary_text"
                 android:textSize="24sp"
                 android:textStyle="normal"
-                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintBottom_toTopOf="@+id/btn_another_hit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_pinata"
-                tools:text="This is a new Advice take care,This is a new Advice take care " />
+                tools:text="This is a new Advice take care,This is a new Advice take care"
+                android:text="@{myAdviceViewModel.properties.slip.advice}"
+
+                />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_another_hit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
