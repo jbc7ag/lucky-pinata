@@ -66,6 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/img_pinata"
                 tools:text="This is a new Advice take care,This is a new Advice take care"
                 android:text="@{myAdviceViewModel.properties.slip.advice}"
+                app:status="@{myAdviceViewModel.status}"
 
                 />
 
@@ -108,6 +109,20 @@
                 app:layout_constraintBottom_toBottomOf="@+id/img_pinata"
                 app:layout_constraintStart_toStartOf="@+id/img_pinata"
                 app:srcCompat="@android:drawable/ic_delete" />
+
+            <ImageView
+                android:id="@+id/img_loading"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_advice"
+                app:layout_constraintEnd_toEndOf="@+id/text_advice"
+                app:layout_constraintStart_toEndOf="@+id/text_advice"
+                app:layout_constraintTop_toTopOf="@+id/text_advice"
+                app:srcCompat="@drawable/loading_animation"
+                app:statuslod="@{myAdviceViewModel.status}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

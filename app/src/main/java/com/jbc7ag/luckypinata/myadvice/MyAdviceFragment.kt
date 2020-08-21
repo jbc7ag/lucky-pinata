@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.jbc7ag.luckypinata.databinding.FragmentMyAdviceBinding
-import timber.log.Timber
 
 class MyAdviceFragment: Fragment(){
 
@@ -23,8 +23,15 @@ class MyAdviceFragment: Fragment(){
         viewModel = ViewModelProvider(this).get(MyAdviceViewModel::class.java)
         binding.myAdviceViewModel = viewModel
 
-
         binding.setLifecycleOwner(this)
+
+        binding.btnAnotherHit.setOnClickListener{
+            this.findNavController().navigate(MyAdviceFragmentDirections.actionMyAdviceFragmentToHitPinataFragment())
+
+        }
+
+
+
 
         return binding.root
     }

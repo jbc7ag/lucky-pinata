@@ -40,31 +40,19 @@ class MyAdviceViewModel : ViewModel(){
 
         coroutineScope.launch {
 
+            _status.value = AdviceStatus.LOADING
             var getProperty = AdviceApi.retrofitService.getProperty()
 
             try {
                 var property = getProperty.await()
                 _properties.value =  property
+                _status.value = AdviceStatus.DONE
 
             }catch (e: Exception){
                 Timber.i("EROR ${e}");
+                _status.value = AdviceStatus.ERROR
             }
         }
-
-       /* getProperty.enqueue(object : Callback<AdviceProperty> {
-            override fun onResponse(call: Call<AdviceProperty>, response: Response<AdviceProperty>) {
-                if (response.code() == 200) {
-                    _properties.value = response.body()
-                    Timber.i("result "+ _properties.value);
-
-                }
-            }
-
-            override fun onFailure(call: Call<AdviceProperty>, t: Throwable) {
-               // _properties.value = t.message
-                Timber.i("error")
-            }
-        }) */
 
     }
 

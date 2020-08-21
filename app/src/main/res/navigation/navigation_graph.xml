@@ -13,7 +13,10 @@
         <action
             android:id="@+id/action_hitPinataFragment_to_myAdviceFragment"
             app:destination="@id/myAdviceFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <argument
             android:name="numHits"
             app:argType="integer"
@@ -28,7 +31,10 @@
         <action
             android:id="@+id/action_myAdviceFragment_to_hitPinataFragment"
             app:destination="@id/hitPinataFragment"
-            app:enterAnim="@anim/nav_default_pop_exit_anim"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/hitPinataFragment" />
     </fragment>
 </navigation>

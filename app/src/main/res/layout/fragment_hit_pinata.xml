@@ -32,7 +32,8 @@
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/pinata" />
+                app:srcCompat="@drawable/pinata"
+                android:onClick="@{()-> hitPinataViewModel.addClick()}"/>
 
             <TextView
                 android:id="@+id/text_nice_hit"

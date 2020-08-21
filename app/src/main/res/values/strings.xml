@@ -6,4 +6,7 @@
     <string name="button_hit_again">Get a new piñata</string>
     <string name="text_song">Dale, Dale, Dale, No pierdas el tino...</string>
     <string name="text_note">[Mexican Piñata song]</string>
+
+    <string name="text_status_loading">Getting your advice...</string>
+    <string name="text_status_error">Ho, God, there was an error, no advice atm</string>
 </resources>

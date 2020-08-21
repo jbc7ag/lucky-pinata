@@ -1,6 +1,6 @@
 package com.jbc7ag.luckypinata.hitPinata
 
-import android.R
+
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,10 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.jbc7ag.luckypinata.R
 import com.jbc7ag.luckypinata.databinding.FragmentHitPinataBinding
 
 
@@ -32,21 +34,22 @@ class HitPinataFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
-        //val animation: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+        viewModel.finishHit.observe(viewLifecycleOwner, Observer {
 
-        binding.imgPinata.setOnClickListener(View.OnClickListener {
-         //   it.startAnimation(animation)
-
-            AnimationUtils.loadAnimation(context, R.anim.fade_in).also { hyperspaceJumpAnimation ->
-                binding.imgPinata.startAnimation(hyperspaceJumpAnimation)
-            }
-           // Toast.makeText(context,"${viewModel.randomNumber.value} - ${viewModel.countClick.value}", Toast.LENGTH_LONG).show()
-
-            if(viewModel.finishHits()){
+            if(it){
                 this.findNavController().navigate(HitPinataFragmentDirections.actionHitPinataFragmentToMyAdviceFragment())
             }
-            viewModel.addClick()
+
         })
+
+       // binding.imgPinata.setOnClickListener{
+
+            AnimationUtils.loadAnimation(context, R.anim.pend_animation).also { animation ->
+                binding.imgPinata.startAnimation(animation)
+      //      }
+        }
+
+
 
         return binding.root
     }
