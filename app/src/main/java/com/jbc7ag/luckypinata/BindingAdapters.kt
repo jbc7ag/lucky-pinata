@@ -11,7 +11,7 @@ import com.jbc7ag.luckypinata.myadvice.AdviceStatus
 fun bindStatus(txtAdvice: TextView, status: AdviceStatus?){
     when(status){
         AdviceStatus.LOADING ->{
-            txtAdvice.text = txtAdvice.getResources().getString(R.string.text_status_loading)
+            txtAdvice.text = ""
         }
         AdviceStatus.ERROR ->{
             txtAdvice.text = txtAdvice.getResources().getString(R.string.text_status_error)
